@@ -67,12 +67,47 @@ test.describe('Verify All Products and product detail page', () => {
   });
 
   test('Verify category', async ({ page }) => {
-  
+      const homePage = new HomePage(page);
+      const productsPage = new ProductsPage(page);
+
+      await homePage.navigate();
+      await homePage.verifyHomePageIsVisible();
+      await homePage.clickOnProducts();
+      await productsPage.verifyCategoryOfProducts();
+  });
+
+  test('Verify women category', async ({ page }) => {
+      const homePage = new HomePage(page);
+      const productsPage = new ProductsPage(page);
+
+      await homePage.navigate();
+      await homePage.verifyHomePageIsVisible();
+      await homePage.clickOnProducts();
+      await productsPage.verifyCategoryWomenIsVisible();
+  });
+
+  test('Verify men category', async ({ page }) => {
+      const homePage = new HomePage(page);
+      const productsPage = new ProductsPage(page);
+
+      await homePage.navigate();
+      await homePage.verifyHomePageIsVisible();
+      await homePage.clickOnProducts();
+      await productsPage.verifyCategoryMenIsVisible();
+  });
+
+  test('Verify kids category', async ({ page }) => {
+      const homePage = new HomePage(page);
+      const productsPage = new ProductsPage(page);
+      
+      await homePage.navigate();
+      await homePage.verifyHomePageIsVisible();
+      await homePage.clickOnProducts();
+      await productsPage.verifyCategoryKidsIsVisible();
   });
 
   test('Verify brands', async ({ page }) => {
   
   });
  
-
 });
